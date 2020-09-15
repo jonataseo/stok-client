@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../services/client.service';
 import { Client } from '../models/client';
-import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-client-list',
@@ -12,7 +12,6 @@ export class ClientListComponent implements OnInit {
 
   client = {} as Client;
   clients: Client[];
-
   constructor(private clientService: ClientService) { }
 
   ngOnInit() {
@@ -35,7 +34,7 @@ export class ClientListComponent implements OnInit {
 
   //copy a client to edit
   editClient(client: Client) {
-  this.client = { ...client };
+    this.client = { ...client };
   }
 
 }

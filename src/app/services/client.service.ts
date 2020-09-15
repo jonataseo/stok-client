@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Client } from '../models/client';
 
@@ -10,6 +10,7 @@ import { Client } from '../models/client';
 export class ClientService {
 
   url = 'http://127.0.0.1:8000/api/clients/';
+  clientId: number;
 
   //injecting HttpClient
   constructor(private httpClient: HttpClient) { }
@@ -73,5 +74,9 @@ export class ClientService {
     }
     console.log(errorMessage);
     return throwError(errorMessage);
+  }
+
+  nextEditableClient(clientId: number){
+    this.clientId = clientId;
   }
 }

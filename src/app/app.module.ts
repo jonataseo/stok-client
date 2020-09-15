@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ClientListComponent } from './client-list/client-list.component';
+import { ClientFormComponent } from './client-form/client-form.component';
 
 
 @NgModule({
@@ -16,11 +17,14 @@ import { ClientListComponent } from './client-list/client-list.component';
     HeaderComponent,
     FooterComponent,
     ClientListComponent,
+    ClientFormComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {path: 'client-list', component: ClientListComponent},
+      {path: 'client-form', component: ClientFormComponent},
+      {path: 'client-form/:id', component: ClientFormComponent},
     ]),
     NoopAnimationsModule,
     HttpClientModule,
