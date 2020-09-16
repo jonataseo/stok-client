@@ -1,8 +1,8 @@
-<nav aria-label="breadcrumb">
+<!-- <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item active " aria-current="page">Adicionar / Atualizar Cliente</li>
   </ol>
-</nav>
+</nav> -->
 <div class="container">
   <div class="card add-client">
     <h5 class="card-header">Adicionar / Atualizar</h5>
@@ -10,49 +10,49 @@
       <form id="add-form" (ngSubmit)="f.form.valid && saveClient(f)" #f="ngForm" novalidate>
         <div class="form-group">
           <label for="name">Nome</label>
-          <input type="text" [(ngModel)]="client.name" id="name" name="name" #name="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" placeholder="Nome">
+          <input type="text" class="form-control" [(ngModel)]="client.name" id="name" name="name" #name="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" placeholder="Nome">
           <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
             <div  *ngIf="name.errors.required">Nome é obrigatório</div>
           </div>
         </div>
-        <div>
+        <div class="form-group">
           <label for="phone">Telefone</label>
-          <input type="text" [(ngModel)]="client.phone" id="phone" name="phone" #phone="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" placeholder="Telefone">
+          <input type="text" class="form-control" [(ngModel)]="client.phone" id="phone" name="phone" #phone="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" placeholder="Telefone">
           <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
             <div  *ngIf="phone.errors.required">Telefone é obrigatório</div>
           </div>
         </div>
-        <div>
+        <div class="form-group">
           <label for="street_name">Logradouro</label>
-          <input type="text" [(ngModel)]="client.street_name" id="street_name" name="street_name" #street_name="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && street_name.invalid }" placeholder="Logradouro">
+          <input type="text" class="form-control" [(ngModel)]="client.street_name" id="street_name" name="street_name" #street_name="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && street_name.invalid }" placeholder="Logradouro">
           <div *ngIf="f.submitted && street_name.invalid" class="invalid-feedback">
             <div  *ngIf="street_name.errors.required">Logradouro é obrigatório</div>
           </div>
         </div>
-        <div>
+        <div class="form-group">
           <label for="street_number">Número</label>
-          <input type="text" [(ngModel)]="client.number" id="street_number" name="street_number" #street_number="ngModel" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && street_number.invalid }" placeholder="Número">
+          <input type="text" class="form-control" [(ngModel)]="client.number" id="street_number" name="street_number" #street_number="ngModel" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && street_number.invalid }" placeholder="Número">
           <div *ngIf="f.submitted && street_number.invalid" class="invalid-feedback">
             <div  *ngIf="street_number.errors.required">Número é obrigatório</div>
           </div>
         </div>
-        <div>
+        <div class="form-group">
           <label for="compliment">Complemento</label>
-          <input type="text" [(ngModel)]="client.compliment" id="compliment" name="compliment" #compliment="ngModel"  class="form-control" [ngClass]="{ 'is-invalid': f.submitted && compliment.invalid }" placeholder="Complemento">
+          <input type="text" class="form-control" [(ngModel)]="client.compliment" id="compliment" name="compliment" #compliment="ngModel"  class="form-control" [ngClass]="{ 'is-invalid': f.submitted && compliment.invalid }" placeholder="Complemento">
           <div *ngIf="f.submitted && compliment.invalid" class="invalid-feedback">
             <div  *ngIf="compliment.errors.required">Complemento é obrigatório</div>
           </div>
         </div>
-        <div>
+        <div class="form-group">
           <label for="neighborhood">Bairro</label>
-          <input type="text" [(ngModel)]="client.neighborhood" id="neighborhood" name="neighborhood" #neighborhood="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && neighborhood.invalid }" placeholder="Bairro">
+          <input type="text" class="form-control" [(ngModel)]="client.neighborhood" id="neighborhood" name="neighborhood" #neighborhood="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && neighborhood.invalid }" placeholder="Bairro">
           <div *ngIf="f.submitted && neighborhood.invalid" class="invalid-feedback">
             <div  *ngIf="neighborhood.errors.required">Bairro é obrigatório</div>
           </div>
         </div>
-        <div>
+        <div class="form-group">
           <label for="zipcode">CEP</label>
-          <input type="text" [(ngModel)]="client.zipcode" id="zipcode" name="zipcode" #zipcode="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && zipcode.invalid }" placeholder="CEP">
+          <input type="text" class="form-control" [(ngModel)]="client.zipcode" id="zipcode" name="zipcode" #zipcode="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && zipcode.invalid }" placeholder="CEP">
           <div *ngIf="f.submitted && zipcode.invalid" class="invalid-feedback">
             <div  *ngIf="zipcode.errors.required">CEP é obrigatório</div>
           </div>

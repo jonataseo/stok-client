@@ -20,9 +20,11 @@ export class ClientFormComponent implements OnInit {
 
   ngOnInit(){
     this.clientId = Number(this.route.snapshot.paramMap.get("id"));
-    this.clientService.getClientById(this.clientId).subscribe((client: Client) => {
-      this.client = client;
-    })
+    if(this.clientId > 0){
+      this.clientService.getClientById(this.clientId).subscribe((client: Client) => {
+        this.client = client;
+      })
+    }
   }
 
 

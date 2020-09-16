@@ -123,5 +123,10 @@
       }
     }
   },
-  "defaultProject": "stok-front"
+  "defaultProject": "stok-front",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "css"
+    }
+  }
 }
