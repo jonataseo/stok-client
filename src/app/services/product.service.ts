@@ -9,7 +9,7 @@ import { Product } from '../models/product';
 })
 export class ProductService {
 
-  url = 'http://127.0.0.1:8000/api/clients/';
+  url = 'http://127.0.0.1:8000/api/products/';
   productId: number;
 
   //injecting HttpClient

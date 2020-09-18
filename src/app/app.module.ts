@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ClientFormComponent } from './client-form/client-form.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ClientFormComponent } from './client-form/client-form.component';
     FooterComponent,
     ClientListComponent,
     ClientFormComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,7 @@ import { ClientFormComponent } from './client-form/client-form.component';
       {path: 'client-list', component: ClientListComponent},
       {path: 'client-form', component: ClientFormComponent},
       {path: 'client-form/:id', component: ClientFormComponent},
+      {path: 'product-list', component: ProductListComponent},
     ]),
     NoopAnimationsModule,
     HttpClientModule,

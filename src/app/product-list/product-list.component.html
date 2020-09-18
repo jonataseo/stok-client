@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="card list-products">
+    <h5 class="card-header">Lista de Produtos</h5>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Valor Compra</th>
+            <th scope="col">Valor Venda</th>
+            <th colspan="2" style="text-align: center;">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{product.name}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.buy_value}}</td>
+            <td>{{product.sell_value}}</td>
+            <td>
+              <button type="button" class="btn btn-warning" [routerLink]="['/product-form', product.id]">Editar</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger" (click)="deleteProduct(product)">Deletar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
