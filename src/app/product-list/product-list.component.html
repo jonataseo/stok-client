@@ -2,6 +2,10 @@
   <div class="card list-products">
     <h5 class="card-header">Lista de Produtos</h5>
     <div class="card-body">
+      <div class="card searchProduct">
+        <input class="form-control" type="text" name="searchProduct" [(ngModel)]="searchProduct"
+          autocomplete="off" placeholder="Buscar por nome do produto">
+      </div>
       <table class="table table-hover">
         <thead>
           <tr>
@@ -14,7 +18,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let product of products">
+          <tr *ngFor="let product of products | filter : searchProduct">
             <td>{{product.name}}</td>
             <td>{{product.quantity}}</td>
             <td>{{product.buy_value}}</td>
@@ -29,5 +33,6 @@
           </tr>
         </tbody>
       </table>
+      <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/product-form">Adicionar novo produto</button>
     </div>
   </div>

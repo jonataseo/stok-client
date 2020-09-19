@@ -7,6 +7,10 @@
   <div class="card list-client">
     <h5 class="card-header">Lista de Clientes</h5>
     <div class="card-body">
+      <div class="card search-client">
+        <input class="form-control" type="text" name="searchClient" [(ngModel)]="searchClient"
+          autocomplete="off" placeholder="Busca por nome do cliente">
+      </div>
       <table class="table table-hover">
         <thead>
           <tr>
@@ -21,7 +25,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let client of clients">
+          <tr *ngFor="let client of clients | filter : searchClient">
             <td>{{client.name}}</td>
             <td>{{client.phone}}</td>
             <td>{{client.street_name}}</td>
@@ -38,5 +42,6 @@
           </tr>
         </tbody>
       </table>
+      <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/client-form">Adicionar novo cliente</button>
     </div>
   </div>

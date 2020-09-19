@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+
 import { ClientService } from '../services/client.service';
 import { Client } from '../models/client';
 
@@ -12,10 +14,17 @@ export class ClientListComponent implements OnInit {
 
   client = {} as Client;
   clients: Client[];
-  constructor(private clientService: ClientService) { }
+  searchClient;
+  constructor(private clientService: ClientService, private router: Router) { }
 
   ngOnInit() {
     this.getClients();
+    this.router.events.subscribe((evt) => {
+      if(!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0,0);
+    });
   }
 
   //Call the service for get all clients
