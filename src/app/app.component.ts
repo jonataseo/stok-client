@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ClientService } from './services/client.service';
-import { Client } from './models/client';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +8,7 @@ import { NgForm } from '@angular/forms';
 
 export class AppComponent implements OnInit {
 
-    // client = {} as Client;
-    // clients: Client[];
-
-    constructor(private clientService: ClientService) {}
+    constructor() {}
 
     ngOnInit(): void {
 
