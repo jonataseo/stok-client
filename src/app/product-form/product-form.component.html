@@ -31,6 +31,13 @@
             <div  *ngIf="sell_value.errors.required">Número é obrigatório</div>
           </div>
         </div>
+        <div class="form-group">
+          <label for="date_of_last_buy">Data da Última Compra</label>
+          <input type="date" class="form-control" [(ngModel)]="product.date_of_last_buy" id="date_of_last_buy" name="date_of_last_buy" #date_of_last_buy="ngModel" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && date_of_last_buy.invalid }" placeholder="Data da Última Compra">
+          <div *ngIf="f.submitted && date_of_last_buy.invalid" class="invalid-feedback">
+            <div *ngIf="date_of_last_buy.errors.required">Data da Última Compra é obrigatório</div>
+          </div>
+        </div>
         <button type="button" class="btn btn-primary btn-add-client" (click)="saveProduct(f)" [routerLink]="['/product-list']">Salvar</button>
         <button type="reset" class="btn btn-secondary" (click)="cleanForm(f)">Limpar Formulário</button>
         <button type="button" class="btn btn-info" [routerLink]="['/product-list']">Cancelar</button>
