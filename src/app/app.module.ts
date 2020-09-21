@@ -14,6 +14,7 @@ import { ClientListComponent } from './client-list/client-list.component';
 import { ClientFormComponent } from './client-form/client-form.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { SaleFormComponent } from './sale-form/sale-form.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ProductFormComponent } from './product-form/product-form.component';
     ClientFormComponent,
     ProductListComponent,
     ProductFormComponent,
+    SaleFormComponent,
   ],
   imports: [
     BrowserModule,

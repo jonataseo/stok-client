@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="car add-sale">
+    <h5 class="card-header">Adicionar / Atualizar Vendas</h5>
+    <div class="card-body">
+      <form id="add-form" (ngSubmit)="f.form.valid && saveSale(f)" #f="ngForm" novalidate>
+        <div class="form-group">
+          <label for="client">Cliente</label>
+          <input list="clients" name="clients">
+          <datalist id="clients">
+            <option value="TODO"></option>
+          </datalist>
+        </div>
+        <div class="form-group">
+          <label for="products">Produtos</label>
+          <input for="products" name="product">
+          <datalist id="products">
+            <option value="TODO"></option>
+          </datalist>
+        </div>
+        <div class="form-group">
+          <label for="date_of_sale">Data Venda</label>
+          <input type="date" class="form-control" [(ngModel)="sale.date" id="date" name="date" #date="ngModel" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && date.invalid }" placeholder="Data Venda">
+          <div *ngIf="f.submitted && date.invalid" class="invalid-feedback">
+            <div *ngIf="date.errors.required">Data é obrigatória</div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-add-sale" (click)="saveSale(f)" [routerLink]="['/sale-list']">Salvar</button>
+        <button type="reset" class="btn btn-secondary" (click)="cleanForm(f)">Limpar Formulário</button>
+        <button type="button" class="btn btn-info" [routerLink]="['/sale-list']">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</div>
